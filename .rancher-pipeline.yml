@@ -1,0 +1,17 @@
+stages:
+- name: compile
+  steps:
+  - publishImageConfig:
+      dockerfilePath: ./Dockerfile
+      buildContext: .
+      tag: gibrantd/splitter:v1
+      pushRemote: true
+      registry: index.docker.io
+timeout: 60
+notification:
+  recipients:
+  - recipient: '#match-interredes'
+    notifier: local:n-j2hbf
+  condition:
+  - Success
+  - Failed
