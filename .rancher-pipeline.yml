@@ -4,7 +4,11 @@ stages:
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
       buildContext: .
+<<<<<<< HEAD
       tag: gibrantd/splitter:${CICD_EXECUTION_SEQUENCE}
+=======
+      tag: gibrantd/splitter
+>>>>>>> 14a1fab7a22b5fe967fde01ff72ea62f12c3b140
       pushRemote: true
       registry: index.docker.io
 - name: Deploy
