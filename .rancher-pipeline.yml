@@ -1,0 +1,11 @@
+stages:
+- name: compile
+  steps:
+  - publishImageConfig:
+      dockerfilePath: ./Dockerfile
+      buildContext: .
+      tag: localhost:5000/splitter:v1
+      pushRemote: true
+      registry: index.docker.io
+timeout: 60
+notification: {}
